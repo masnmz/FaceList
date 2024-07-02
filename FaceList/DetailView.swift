@@ -25,6 +25,7 @@ struct DetailView: View {
             }
             .navigationTitle(photo.name)
             .navigationBarTitleDisplayMode(.inline)
+            .background(.darkBackGround)
         }
     }
 }

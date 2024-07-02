@@ -31,24 +31,34 @@ struct AddImageView: View {
                         } else {
                             Text("Select an Image")
                                 .foregroundStyle(.gray)
+                                .frame(width: 30, height: 30)
                         }
                     }
+                    .listRowBackground(Color.lightBackground)
                 }
                 
                 Section("Details") {
                     TextField("Name", text: $viewModel.name)
                     TextField("Description", text: $viewModel.description)
                 }
+                .listRowBackground(Color.lightBackground)
                 
                 Button("Save") {
                     let newPhoto = Photo(image: viewModel.image ?? UIImage(systemName: "photo")!, name: viewModel.name, description: viewModel.description)
                     onSave(newPhoto)
                     dismiss()
                 }
-                
+                .disabled(viewModel.selectedImage == nil)
+                .foregroundStyle(viewModel.selectedImage == nil ? .black : .white)
+                .listRowBackground(viewModel.selectedImage == nil ? Color.gray : Color.lightBackground)
+                .clipShape(.capsule)
+                .shadow(radius: 10)
                 
             }
             .navigationTitle("Add Image")
+            .scrollContentBackground(.hidden)
+            .background(.darkBackGround)
+
         }
         
     }

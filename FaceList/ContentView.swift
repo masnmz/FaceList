@@ -20,9 +20,16 @@ struct ContentView: View {
                     List{
                         ForEach(viewModel.photos.sorted()) { photo in
                             NavigationLink(destination: DetailView(photo: photo)) {
-                                Text(photo.name)
+                                HStack{
+                                    Image(uiImage: photo.image)
+                                        .resizable()
+                                        .frame(width: 100, height: 100)
+                    
+                                    Text(photo.name)
+                                }
                             }
                         }
+                        .listRowBackground(Color.lightBackground)
                     }
                 }
             }
@@ -40,6 +47,9 @@ struct ContentView: View {
                     viewModel.save()
                 })
             }
+            .scrollContentBackground(.hidden)
+            .background(.darkBackGround)
+            .preferredColorScheme(.dark)
         }
         
         
