@@ -8,14 +8,37 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var photos : [Photo] = []
+    @State private var showingAddImage = false
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack {
+            VStack {
+                if photos.isEmpty {
+                    VStack {
+                        ContentUnavailableView("No Photos", systemImage: "photo", description: Text("Do not have Photos. Add photos to see here"))
+                    }
+                } else {
+                    List{
+                        ForEach(photos) { photo in
+                            Text(photo.name)
+                        }
+                    }
+                }
+            }
+            .navigationTitle("FaceList")
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button("Add Image", systemImage: "plus") {
+                        showingAddImage.toggle()
+                    }
+                }
+            }
+            .sheet(isPresented: $showingAddImage) {
+                AddImageView()
+            }
         }
-        .padding()
+        
+        
     }
 }
 

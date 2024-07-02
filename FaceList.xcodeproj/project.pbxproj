@@ -7,18 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D539A3202C34323400B009E9 /* AddImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D539A31F2C34323400B009E9 /* AddImageView.swift */; };
+		D539A3222C34341F00B009E9 /* AddImageView-ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D539A3212C34341F00B009E9 /* AddImageView-ViewController.swift */; };
 		D5C3AD6C2C3423F700094758 /* FaceListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3AD6B2C3423F700094758 /* FaceListApp.swift */; };
 		D5C3AD6E2C3423F700094758 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3AD6D2C3423F700094758 /* ContentView.swift */; };
 		D5C3AD702C3423F900094758 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5C3AD6F2C3423F900094758 /* Assets.xcassets */; };
 		D5C3AD732C3423F900094758 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5C3AD722C3423F900094758 /* Preview Assets.xcassets */; };
+		D5C3AD7B2C34257F00094758 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3AD7A2C34257F00094758 /* Image.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D539A31F2C34323400B009E9 /* AddImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddImageView.swift; sourceTree = "<group>"; };
+		D539A3212C34341F00B009E9 /* AddImageView-ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddImageView-ViewController.swift"; sourceTree = "<group>"; };
 		D5C3AD682C3423F700094758 /* FaceList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FaceList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5C3AD6B2C3423F700094758 /* FaceListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceListApp.swift; sourceTree = "<group>"; };
 		D5C3AD6D2C3423F700094758 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D5C3AD6F2C3423F900094758 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D5C3AD722C3423F900094758 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D5C3AD7A2C34257F00094758 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +57,11 @@
 		D5C3AD6A2C3423F700094758 /* FaceList */ = {
 			isa = PBXGroup;
 			children = (
-				D5C3AD6B2C3423F700094758 /* FaceListApp.swift */,
+				D539A31F2C34323400B009E9 /* AddImageView.swift */,
+				D539A3212C34341F00B009E9 /* AddImageView-ViewController.swift */,
 				D5C3AD6D2C3423F700094758 /* ContentView.swift */,
+				D5C3AD6B2C3423F700094758 /* FaceListApp.swift */,
+				D5C3AD7A2C34257F00094758 /* Image.swift */,
 				D5C3AD6F2C3423F900094758 /* Assets.xcassets */,
 				D5C3AD712C3423F900094758 /* Preview Content */,
 			);
@@ -137,7 +146,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D539A3202C34323400B009E9 /* AddImageView.swift in Sources */,
 				D5C3AD6E2C3423F700094758 /* ContentView.swift in Sources */,
+				D539A3222C34341F00B009E9 /* AddImageView-ViewController.swift in Sources */,
+				D5C3AD7B2C34257F00094758 /* Image.swift in Sources */,
 				D5C3AD6C2C3423F700094758 /* FaceListApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
