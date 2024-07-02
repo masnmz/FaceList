@@ -8,19 +8,20 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var photos : [Photo] = []
-    @State private var showingAddImage = false
+    @State private var viewModel = ViewModel()
     var body: some View {
         NavigationStack {
             VStack {
-                if photos.isEmpty {
+                if viewModel.photos.isEmpty {
                     VStack {
                         ContentUnavailableView("No Photos", systemImage: "photo", description: Text("Do not have Photos. Add photos to see here"))
                     }
                 } else {
                     List{
-                        ForEach(photos) { photo in
-                            Text(photo.name)
+                        ForEach(viewModel.photos.sorted()) { photo in
+                            NavigationLink(destination: DetailView(photo: photo)) {
+                                Text(photo.name)
+                            }
                         }
                     }
                 }
@@ -29,12 +30,15 @@ struct ContentView: View {
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button("Add Image", systemImage: "plus") {
-                        showingAddImage.toggle()
+                        viewModel.showingAddImage.toggle()
                     }
                 }
             }
-            .sheet(isPresented: $showingAddImage) {
-                AddImageView()
+            .sheet(isPresented: $viewModel.showingAddImage) {
+                AddImageView(photo: Photo(image: UIImage(systemName: "photo")!, name: "", description: ""), onSave: { newPhoto in
+                    viewModel.addPhoto(photo: newPhoto)
+                    viewModel.save()
+                })
             }
         }
         
